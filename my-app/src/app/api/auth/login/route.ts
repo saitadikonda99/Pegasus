@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 import bcrypt from "bcrypt";
 
 
-const isAuth = async (username, password) => {
+const isAuth = async (username: any, password: any) => {
 
   const user = await pool.query(
     `SELECT username, name, role, active, id, password
@@ -101,7 +101,7 @@ export const POST = async (req: NextRequest) => {
       refreshToken: refreshToken,
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
     return NextResponse.json({ message: error.message }, { status: 500 });
   } 

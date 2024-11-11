@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
 import { toast } from "react-hot-toast";
 
-import Loader from '../../../animation/loader';
 
 import "./page.css";
 
@@ -22,7 +21,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
 
     if (!userData.username || !userData.password) {
@@ -73,13 +72,13 @@ const Login = () => {
         toast.error(response.data.message);
       }
 
-    } catch (error) {
+    } catch (error: any) {
       setIsLoading(false);
       toast.error(error.response.data.message);
     }
   };
 
-  const handleInput = (e) => {
+  const handleInput = (e: any) => {
     const { name, value } = e.target;
     setUserData({
       ...userData,
@@ -88,7 +87,6 @@ const Login = () => {
   };
 
   return (
-    isLoading ? <Loader /> : 
     <div className="LoginComponent">
       <div className="LoginComponent-in">
         <div className="Login-one">

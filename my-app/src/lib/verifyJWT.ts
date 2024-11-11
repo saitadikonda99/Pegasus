@@ -3,7 +3,7 @@ import { jwtVerify } from "jose";
 
 export const verifyJWT = async () => {
     try {
-        const cookieStore = cookies()
+        const cookieStore = await cookies()
         const JWT = cookieStore.get('jwt')?.value;
 
         if (!JWT) {

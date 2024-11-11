@@ -7,7 +7,7 @@ import { cookies } from "next/headers";
 import bcrypt from "bcrypt";
 
 
-const isAuth = async (username, password) => {
+const isAuth = async (username: any, password: any) => {
 
   const user = await pool.query(
     `SELECT username, name, role, active, id, password
@@ -83,7 +83,7 @@ export const POST = async (req: NextRequest) => {
     expirationTime.setTime(expirationTime.getTime() + 15 * 60 * 1000);
 
     // set the cookie with refresh token
-    cookies().set("jwt", refreshToken, {
+    (await cookies()).set("jwt", refreshToken, {
       sameSite: "lax",
       secure: false,
       httpOnly: false,
@@ -101,7 +101,7 @@ export const POST = async (req: NextRequest) => {
       refreshToken: refreshToken,
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
     return NextResponse.json({ message: error.message }, { status: 500 });
   } 

@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Image from "next/image";
-// import { MdOutlineLogout } from "react-icons/md";
+import { MdOutlineLogout } from "react-icons/md";
 import { usePathname } from 'next/navigation'
 import Logout from '../../../../lib/logout'
 
@@ -29,7 +29,7 @@ const navbar = ({ userDetails}) => {
             </div>
             <div className="AN-two">
               <div className="AN-two-in">
-                <h1>Student Activity Center - {userDetails.role} Panel</h1>
+                <h1>Smart Village Revolution - {userDetails.role} Panel</h1>
               </div>
             </div>
             <div className="AN-three">
@@ -43,7 +43,7 @@ const navbar = ({ userDetails}) => {
         <div className="AdminNavComponent-two">
             <div className="AdminNavComponent-two-in">
                 <p>{pathname}</p>
-                <button onClick={handleLogout} > Logout </button>
+                <button onClick={handleLogout} > Logout <MdOutlineLogout /></button>
             </div>
         </div>
       </div>

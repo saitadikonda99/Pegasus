@@ -3,6 +3,8 @@ import React from "react";
 import { useRouter } from 'next/navigation'
 import { useState } from "react";
 import "./page.css";
+import { MdOutlinePublishedWithChanges } from "react-icons/md";
+import { IoPerson } from "react-icons/io5";
 
 
 
@@ -34,12 +36,21 @@ const sidebar = () => {
 
   const sidebarOptions = [
     {
+      name: "Home",
+      icon: <MdOutlinePublishedWithChanges className="sideBar-icon" />,
+      link: "/admin/home",
+    },
+    {
+      name: "Add Admin",
+      icon: <MdOutlinePublishedWithChanges className="sideBar-icon" />,
+      link: "/admin/addAdmin",
+    },
+    {
       name: "Update Club",
-      // icon: <MdOutlinePublishedWithChanges className="sideBar-icon" />,
-      icon: '',
-      link: "",
+      icon: <MdOutlinePublishedWithChanges className="sideBar-icon" />,
+      link: "/",
       subOptions: [
-        // { name: "Update Lead", icon: <IoPerson className="sideBar-icon" />, link: "/admin/clubUpdate/lead" }
+        { name: "Update Lead", icon: <IoPerson className="sideBar-icon" />, link: "/admin/clubUpdate/lead" },
         { name: "Update Lead", icon: '', link: "/admin/clubUpdate/lead" }
       ],
     }

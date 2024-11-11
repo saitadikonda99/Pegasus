@@ -6,6 +6,8 @@ import { useState, useEffect, ReactNode } from "react";
 // imports start here
 import Sidebar from '../../components/sidebar/page'
 import Navbar from '../../components/navbar/page'
+import Footer from '../../components/footer/page'
+
 
 import './dashboard.css'
 
@@ -35,6 +37,7 @@ const Dashboard: React.FC<{ children: ReactNode }> = ({ children }) => {
         </div>
         <div className="DashboardComponent-Footer">
           <div className="DashboardComponent-Footer-in">
+          <Footer />
           </div>
         </div>
       </div>

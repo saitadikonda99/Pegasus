@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import axios from "axios";
 import { useState, useEffect, ReactNode } from "react";
@@ -6,24 +7,15 @@ import { useState, useEffect, ReactNode } from "react";
 import Sidebar from '../../components/sidebar/page'
 import Navbar from '../../components/navbar/page'
 
-import './page.css'
+import './dashboard.css'
 
-const Dashboard = ({ children : any}) => {
+const Dashboard: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   const [userDetails, setUserDetails] = useState({
     username: "",
     name: "",
     role: "",
 });
-
-useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    setUserDetails({
-        username: user.username,
-        name: user.name,
-        role: user.role,
-    });
-}, []);
 
   return (
     <div className="DashboardComponent">
